@@ -1,6 +1,6 @@
 {
   "name": "anime-ui-cli",
-  "version": "0.1.0-beta.0",
+  "version": "0.1.0-beta.1",
   "description": "CLI for adding Anime UI components to your project",
   "type": "module",
   "bin": {

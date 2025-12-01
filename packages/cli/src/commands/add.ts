@@ -9,7 +9,7 @@ import fetch from "node-fetch";
 import { getPackageManager } from "../utils/get-package-manager";
 import { loadConfig } from "../utils/load-config";
 
-const REGISTRY_URL = process.env.ANIME_UI_REGISTRY_URL || "https://anime-ui.vercel.app/r";
+const REGISTRY_URL = process.env.ANIME_UI_REGISTRY_URL || "https://anime-ui-www.vercel.app/r";
 
 export async function add(
   components: string[],
