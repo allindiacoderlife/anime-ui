@@ -1,0 +1,12 @@
+# Vercel ignore patterns
+node_modules
+.next
+.turbo
+dist
+temp
+__registry__
+
+# Don't ignore these needed files
+!registry
+!public
+!scripts

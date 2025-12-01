@@ -1,12 +1,12 @@
+// source.config.ts
 import {
   defineConfig,
   defineDocs,
   frontmatterSchema,
-  metaSchema,
-} from 'fumadocs-mdx/config';
-import { z } from 'zod';
-
-export const docs = defineDocs({
+  metaSchema
+} from "fumadocs-mdx/config";
+import { z } from "zod";
+var docs = defineDocs({
   docs: {
     schema: frontmatterSchema.extend({
       releaseDate: z.coerce.date().optional(),
@@ -14,20 +14,21 @@ export const docs = defineDocs({
       alpha: z.boolean().optional(),
       updated: z.boolean().optional(),
       deprecated: z.boolean().optional(),
-      author: z
-        .object({
-          name: z.string(),
-          url: z.string().optional(),
-        })
-        .optional(),
-    }),
+      author: z.object({
+        name: z.string(),
+        url: z.string().optional()
+      }).optional()
+    })
   },
   meta: {
-    schema: metaSchema,
-  },
+    schema: metaSchema
+  }
 });
-
-export default defineConfig({
-  lastModifiedTime: 'git',
-  mdxOptions: {},
+var source_config_default = defineConfig({
+  lastModifiedTime: "git",
+  mdxOptions: {}
 });
+export {
+  source_config_default as default,
+  docs
+};
