@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs';
+import { promises as fs, existsSync } from 'fs';
 import path from 'path';
 import { rimraf } from 'rimraf';
 
@@ -221,6 +221,12 @@ export const index: Record<string, any> = {`;
 
   index += `
   }`;
+
+  // Ensure the __registry__ directory exists
+  const registryDir = path.join(process.cwd(), '__registry__');
+  if (!existsSync(registryDir)) {
+    await fs.mkdir(registryDir, { recursive: true });
+  }
 
   // Remove the previous registry index file and write the new one.
   rimraf.sync(path.join(process.cwd(), '__registry__/index.tsx'));
