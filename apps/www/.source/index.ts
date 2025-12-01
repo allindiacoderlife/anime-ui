@@ -1,0 +1,8 @@
+// @ts-nocheck -- skip type checking
+import * as docs_3 from "../content/docs/components/split-text/block-text.mdx?collection=docs&hash=1764338475833"
+import * as docs_2 from "../content/docs/components/index.mdx?collection=docs&hash=1764338475833"
+import * as docs_1 from "../content/docs/installation.mdx?collection=docs&hash=1764338475833"
+import * as docs_0 from "../content/docs/index.mdx?collection=docs&hash=1764338475833"
+import { _runtime } from "fumadocs-mdx"
+import * as _source from "../source.config"
+export const docs = _runtime.docs<typeof _source.docs>([{ info: {"path":"index.mdx","absolutePath":"D:/PROGRAMMING/GSAP/anime-ui/apps/www/content/docs/index.mdx"}, data: docs_0 }, { info: {"path":"installation.mdx","absolutePath":"D:/PROGRAMMING/GSAP/anime-ui/apps/www/content/docs/installation.mdx"}, data: docs_1 }, { info: {"path":"components\\index.mdx","absolutePath":"D:/PROGRAMMING/GSAP/anime-ui/apps/www/content/docs/components/index.mdx"}, data: docs_2 }, { info: {"path":"components\\split-text\\block-text.mdx","absolutePath":"D:/PROGRAMMING/GSAP/anime-ui/apps/www/content/docs/components/split-text/block-text.mdx"}, data: docs_3 }], [{"info":{"path":"meta.json","absolutePath":"D:/PROGRAMMING/GSAP/anime-ui/apps/www/content/docs/meta.json"},"data":{"pages":["---Menu---","components"]}}, {"info":{"path":"components\\meta.json","absolutePath":"D:/PROGRAMMING/GSAP/anime-ui/apps/www/content/docs/components/meta.json"},"data":{"title":"Components","pages":["---Split Text---","split-text/block-text"],"description":"Animated Components","root":true,"icon":"Component"}}])

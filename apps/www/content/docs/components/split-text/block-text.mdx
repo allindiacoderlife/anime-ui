@@ -1,0 +1,89 @@
+---
+title: Block Text
+description: A text animation component that reveals text with sliding block overlays.
+author:
+  name: chirag
+  url: https://github.com/allindiacoderlife
+releaseDate: 2025-12-01
+---
+
+<ComponentPreview name="block-text-demo" />
+
+## Installation
+
+<ComponentInstallation name="block-text" />
+
+## Usage
+
+```tsx
+import BlockText from '@/components/split-text/block-text';
+
+export default function Example() {
+  return (
+    <BlockText
+      animationOnScroll={false}
+      delay={0.5}
+      blockColor="#3b82f6"
+      stagger={0.1}
+      duration={0.6}
+    >
+      <h1>Beautiful Block</h1>
+      <h1>Text Reveal</h1>
+      <h1>Animation</h1>
+    </BlockText>
+  );
+}
+```
+
+## API Reference
+
+### BlockText
+
+<TypeTable
+  type={{
+    children: {
+      description: 'The text content to animate. Can be multiple elements.',
+      type: 'React.ReactNode',
+      required: true,
+    },
+    animationOnScroll: {
+      description: 'Whether to trigger the animation on scroll or on mount.',
+      type: 'boolean',
+      required: false,
+      default: 'true',
+    },
+    delay: {
+      description: 'Initial delay before the animation starts (in seconds).',
+      type: 'number',
+      required: false,
+      default: '0',
+    },
+    blockColor: {
+      description: 'The color of the sliding block overlay.',
+      type: 'string',
+      required: false,
+      default: '"#000"',
+    },
+    stagger: {
+      description:
+        'The stagger delay between each line animation (in seconds).',
+      type: 'number',
+      required: false,
+      default: '0.15',
+    },
+    duration: {
+      description: 'The duration of each block animation (in seconds).',
+      type: 'number',
+      required: false,
+      default: '0.75',
+    },
+  }}
+/>
+
+## How it Works
+
+The component uses GSAP's `SplitText` plugin to split text into individual lines, then animates colored blocks sliding across each line to reveal the text beneath. The animation can be triggered on mount or when scrolling into view.
+
+## Credits
+
+- Built with [GSAP](https://gsap.com/) and [SplitText Plugin](https://gsap.com/docs/v3/Plugins/SplitText/).

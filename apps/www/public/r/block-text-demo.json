@@ -1,0 +1,28 @@
+{
+  "name": "block-text-demo",
+  "type": "registry:example",
+  "description": "Demo showcasing the block-text animation component with sliding block reveal effect.",
+  "dependencies": [
+    "gsap",
+    "@gsap/react"
+  ],
+  "registryDependencies": [
+    "block-text"
+  ],
+  "files": [
+    {
+      "path": "registry/demo/split-text/block-text/index.tsx",
+      "type": "registry:example",
+      "language": "typescript",
+      "target": "",
+      "content": "import BlockText from '@/components/anime-ui/components/split-text/block-text';\n\nconst BlockTextAnimation = () => {\n  return (\n    <div className=\"flex min-h-[400px] w-full items-center justify-center p-8\">\n      <BlockText\n        animationOnScroll={false}\n        delay={0.5}\n        blockColor=\"#3b82f6\"\n        stagger={0.1}\n        duration={0.6}\n      >\n        <h1 className=\"text-4xl font-bold md:text-6xl\">Beautiful Block</h1>\n        <h1 className=\"text-4xl font-bold md:text-6xl\">Text Reveal</h1>\n        <h1 className=\"text-4xl font-bold md:text-6xl\">Animation</h1>\n      </BlockText>\n    </div>\n  );\n};\n\nexport default BlockTextAnimation;\n"
+    }
+  ],
+  "tailwind": {
+    "config": {}
+  },
+  "cssVars": {},
+  "meta": {
+    "category": "split-text"
+  }
+}

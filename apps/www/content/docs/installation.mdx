@@ -1,0 +1,61 @@
+---
+title: Installation
+description: How to install dependencies and structure your app.
+---
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { CodeTabs } from '@/components/docs/code-tabs';
+
+<Steps>
+<Step>
+
+### Initialize anime-ui
+
+Run the `init` command to create a new project with anime-ui or setup an existing one.
+
+<CodeTabs
+  codes={{
+    pnpm: `pnpm dlx anime-ui@latest init`,
+    npm: `npx anime-ui@latest init`,
+    yarn: `yarn anime-ui@latest init`,
+    bun: `bunx --bun anime-ui@latest init`,
+  }}
+/>
+
+</Step>
+<Step>
+
+### Add Components
+
+Run the `add` command to add a component to your project.
+
+<CodeTabs
+  codes={{
+    pnpm: `pnpm dlx anime-ui@latest add button`,
+    npm: `npx anime-ui@latest add button`,
+    yarn: `npx anime-ui@latest add button`,
+    bun: `bunx --bun anime-ui@latest add button`,
+  }}
+/>
+
+</Step>
+<Step>
+
+### Import Components
+
+Import the component to your project.
+
+```tsx
+import { Button } from '@/components/anime-ui/button';
+
+export default function Home() {
+  return (
+    <div>
+      <Button />
+    </div>
+  );
+}
+```
+
+</Step>
+</Steps>

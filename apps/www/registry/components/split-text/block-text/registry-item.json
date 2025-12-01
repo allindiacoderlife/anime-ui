@@ -1,0 +1,26 @@
+{
+  "name": "block-text",
+  "type": "registry:component",
+  "description": "A text animation component that reveals text with sliding block overlays.",
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/components/split-text/block-text/index.tsx",
+      "type": "registry:component",
+      "language": "typescript"
+    },
+    {
+      "path": "registry/components/split-text/block-text/index.jsx",
+      "type": "registry:component",
+      "language": "javascript"
+    }
+  ],
+  "tailwind": {
+    "config": {}
+  },
+  "cssVars": {},
+  "meta": {
+    "category": "split-text"
+  }
+}

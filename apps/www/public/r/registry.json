@@ -1,0 +1,75 @@
+{
+  "$schema": "./registry-schema.json",
+  "name": "anime-ui",
+  "version": "0.1.0",
+  "items": [
+    {
+      "name": "index",
+      "type": "registry:style",
+      "dependencies": [
+        "tw-animate-css",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "utils"
+      ],
+      "cssVars": {},
+      "files": []
+    },
+    {
+      "name": "block-text",
+      "type": "registry:component",
+      "description": "A text animation component that reveals text with sliding block overlays.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/components/split-text/block-text/index.tsx",
+          "type": "registry:component",
+          "language": "typescript"
+        },
+        {
+          "path": "registry/components/split-text/block-text/index.jsx",
+          "type": "registry:component",
+          "language": "javascript"
+        }
+      ],
+      "tailwind": {
+        "config": {}
+      },
+      "cssVars": {},
+      "meta": {
+        "category": "split-text"
+      }
+    },
+    {
+      "name": "block-text-demo",
+      "type": "registry:example",
+      "description": "Demo showcasing the block-text animation component with sliding block reveal effect.",
+      "dependencies": [
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [
+        "block-text"
+      ],
+      "files": [
+        {
+          "path": "registry/demo/split-text/block-text/index.tsx",
+          "type": "registry:example"
+        }
+      ],
+      "tailwind": {
+        "config": {}
+      },
+      "cssVars": {},
+      "meta": {
+        "category": "split-text"
+      }
+    }
+  ]
+}

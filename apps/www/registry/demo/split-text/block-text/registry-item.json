@@ -1,0 +1,20 @@
+{
+  "name": "block-text-demo",
+  "type": "registry:example",
+  "description": "Demo showcasing the block-text animation component with sliding block reveal effect.",
+  "dependencies": ["gsap", "@gsap/react"],
+  "registryDependencies": ["block-text"],
+  "files": [
+    {
+      "path": "registry/demo/split-text/block-text/index.tsx",
+      "type": "registry:example"
+    }
+  ],
+  "tailwind": {
+    "config": {}
+  },
+  "cssVars": {},
+  "meta": {
+    "category": "split-text"
+  }
+}
