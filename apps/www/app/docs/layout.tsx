@@ -14,7 +14,7 @@ const DOCS_LAYOUT_PROPS: DocsLayoutProps = {
     tabs: SIDEBAR_TABS,
   },
 
-  githubUrl: 'https://github.com/imskyleen/animate-ui',
+  githubUrl: 'https://github.com/allindiacoderlife/anime-ui',
   themeSwitch: {
     component: <ThemeSwitcher />,
   },

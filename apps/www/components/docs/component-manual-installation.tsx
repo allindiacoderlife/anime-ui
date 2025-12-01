@@ -25,8 +25,8 @@ const getRegistryDepsCommands = (dependencies?: string[]) => {
   if (!dependencies) return undefined;
   const quotedDependencies = dependencies
     .map((dep) => {
-      if (dep.startsWith('https://animate-ui.com/r/')) {
-        return dep.replace('https://animate-ui.com/r/', '@animate-ui/');
+      if (dep.startsWith('https://anime-ui-www.vercel.app/r/')) {
+        return dep.replace('https://anime-ui-www.vercel.app/r/', '');
       }
       if (dep.startsWith('https://')) {
         return `"${dep}"`;
@@ -35,10 +35,10 @@ const getRegistryDepsCommands = (dependencies?: string[]) => {
     })
     .join(' ');
   return {
-    npm: `npx shadcn@latest add ${quotedDependencies}`,
-    pnpm: `pnpm dlx shadcn@latest add ${quotedDependencies}`,
-    yarn: `npx shadcn@latest add ${quotedDependencies}`,
-    bun: `bun x --bun shadcn@latest add ${quotedDependencies}`,
+    npm: `npx anime-ui-cli@beta add ${quotedDependencies}`,
+    pnpm: `pnpm dlx anime-ui-cli@beta add ${quotedDependencies}`,
+    yarn: `npx anime-ui-cli@beta add ${quotedDependencies}`,
+    bun: `bunx anime-ui-cli@beta add ${quotedDependencies}`,
   };
 };
 
