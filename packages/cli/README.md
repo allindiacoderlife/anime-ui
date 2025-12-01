@@ -1,17 +1,17 @@
-# @anima-ui/cli
+# anime-ui-cli
 
-CLI for adding Anima UI components to your project.
+CLI for adding Anime UI components to your project.
 
 ## Installation
 
 ```bash
-npm install -g @anima-ui/cli
+npm install -g anime-ui-cli
 ```
 
-Or use with npx:
+Or use with npx (recommended):
 
 ```bash
-npx @anima-ui/cli@latest init
+npx anime-ui-cli@beta init
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ npx @anima-ui/cli@latest init
 ### Initialize your project
 
 ```bash
-anima-ui init
+anime-ui init
 ```
 
 This will:
@@ -33,20 +33,22 @@ This will:
 Add a single component:
 
 ```bash
-anima-ui add button
+anime-ui add block-text
 ```
 
 Add multiple components:
 
 ```bash
-anima-ui add button card dialog
+anime-ui add block-text card dialog
 ```
 
-Add all components:
+## Features
 
-```bash
-anima-ui add --all
-```
+- 🎨 Beautiful GSAP-powered animations
+- 📦 Copy-paste ready components
+- ⚡ TypeScript and JavaScript support
+- 🎯 Automatic dependency installation
+- 🔧 Smart configuration management
 
 ## Options
 
@@ -62,16 +64,36 @@ anima-ui add --all
 
 ## Configuration
 
-The CLI creates a `anima-ui.json` file in your project root:
+The CLI creates an `anime-ui.json` file in your project root:
 
 ```json
 {
-  "componentsPath": "components/anima-ui",
+  "componentsPath": "components/anime-ui",
   "utilsPath": "lib/utils",
   "typescript": true
 }
 ```
 
+## Available Components
+
+- **block-text** - Text animation with block reveal effect
+
+More components coming soon!
+
+## Requirements
+
+- Node.js 16.x or higher
+- React 18+ or React 19
+- GSAP 3.12+ (automatically installed)
+
+## Links
+
+- [Documentation](https://anime-ui-www.vercel.app/docs)
+- [GitHub](https://github.com/allindiacoderlife/anime-ui)
+- [Issues](https://github.com/allindiacoderlife/anime-ui/issues)
+
 ## License
+
+MIT
 
 MIT

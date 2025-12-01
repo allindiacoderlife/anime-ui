@@ -1,14 +1,35 @@
 {
-  "name": "@anime-ui/cli",
-  "version": "0.1.0",
+  "name": "anime-ui-cli",
+  "version": "0.1.0-beta.0",
   "description": "CLI for adding Anime UI components to your project",
   "type": "module",
   "bin": {
     "anime-ui": "./dist/index.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
+  "keywords": [
+    "anime-ui",
+    "gsap",
+    "react",
+    "components",
+    "animation",
+    "cli",
+    "ui"
+  ],
+  "author": "Anime UI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allindiacoderlife/anime-ui.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/allindiacoderlife/anime-ui/issues"
+  },
+  "homepage": "https://anime-ui-www.vercel.app",
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
