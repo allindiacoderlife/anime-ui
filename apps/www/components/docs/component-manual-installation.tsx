@@ -23,12 +23,19 @@ const getDepsCommands = (dependencies?: string[]) => {
 
 const getRegistryDepsCommands = (dependencies?: string[]) => {
   if (!dependencies) return undefined;
+  const registryUrl = process.env.NEXT_PUBLIC_REGISTRY_URL || 'http://localhost:3000/r';
   const quotedDependencies = dependencies
     .map((dep) => {
-      if (dep.startsWith('https://anime-ui-www.vercel.app/r/')) {
-        return dep.replace('https://anime-ui-www.vercel.app/r/', '');
+      // Remove @anime-ui/ scope if present
+      if (dep.startsWith('@anime-ui/')) {
+        return dep.replace('@anime-ui/', '');
       }
-      if (dep.startsWith('https://')) {
+      // Remove registry URL if present
+      if (dep.startsWith(registryUrl)) {
+        return dep.replace(registryUrl, '').replace(/^\//, '');
+      }
+      // Keep full URL for external dependencies
+      if (dep.startsWith('https://') || dep.startsWith('http://')) {
         return `"${dep}"`;
       }
       return dep;
