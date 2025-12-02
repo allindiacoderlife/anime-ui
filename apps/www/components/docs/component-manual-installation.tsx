@@ -41,6 +41,7 @@ const getRegistryDepsCommands = (dependencies?: string[]) => {
       return dep;
     })
     .join(' ');
+  
   return {
     npm: `npx anime-ui-cli@beta add ${quotedDependencies}`,
     pnpm: `pnpm dlx anime-ui-cli@beta add ${quotedDependencies}`,

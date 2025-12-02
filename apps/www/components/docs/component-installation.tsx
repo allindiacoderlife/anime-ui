@@ -24,11 +24,16 @@ export function ComponentInstallation({
 }: ComponentInstallationProps) {
   const component = index[name];
 
+  // Remove @anime-ui/ prefix if present
+  const commandName = component.command?.startsWith('@anime-ui/')
+    ? component.command.replace('@anime-ui/', '')
+    : component.command;
+
   const commands = {
-    npm: `npx anime-ui-cli@beta add ${component.command}`,
-    pnpm: `pnpm dlx anime-ui-cli@beta add ${component.command}`,
-    yarn: `npx anime-ui-cli@beta add ${component.command}`,
-    bun: `bun x --bun anime-ui-cli@beta add ${component.command}`,
+    npm: `npx anime-ui-cli@beta add ${commandName}`,
+    pnpm: `pnpm dlx anime-ui-cli@beta add ${commandName}`,
+    yarn: `npx anime-ui-cli@beta add ${commandName}`,
+    bun: `bun x --bun anime-ui-cli@beta add ${commandName}`,
   };
 
   return (
