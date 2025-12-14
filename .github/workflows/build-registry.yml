@@ -1,0 +1,69 @@
+name: Build Registry
+
+on:
+  push:
+    branches: [main, dev]
+    paths:
+      - 'apps/www/registry/**'
+      - 'apps/www/scripts/**'
+      - 'apps/www/content/**'
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-registry:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 10
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      
+      - name: Build registry
+        run: |
+          cd apps/www
+          pnpm registry:build
+      
+      - name: Check for changes
+        id: verify-changed-files
+        run: |
+          if git diff --exit-code apps/www/__registry__ apps/www/public/r; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Upload registry artifacts
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        uses: actions/upload-artifact@v3
+        with:
+          name: registry
+          path: |
+            apps/www/__registry__
+            apps/www/public/r
+          retention-days: 7
+      
+      - name: Comment on PR
+        if: github.event_name == 'pull_request' && steps.verify-changed-files.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ Registry built successfully! Components are ready for review.'
+            })
