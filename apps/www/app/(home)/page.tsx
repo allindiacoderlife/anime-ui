@@ -1,12 +1,20 @@
-import BlockTextAnimation from '@/registry/demo/split-text/block-text';
-import { Type, TypeOutline } from 'lucide-react';
 import React from 'react';
+
+import { Nav } from '@/components/docs/nav';
+import Hero from '@/components/home/hero';
+import { Features } from '@/components/home/features';
+import { CTA } from '@/components/home/cta';
+import { Footer } from '@/components/home/footer';
 
 const Home = () => {
   return (
-    <div>
-      <TypeOutline />
-    </div>
+    <main className="min-h-screen bg-background">
+      <Nav />
+      <Hero />
+      <Features />
+      <CTA />
+      <Footer />
+    </main>
   );
 };
 
